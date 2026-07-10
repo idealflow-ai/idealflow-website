@@ -56,7 +56,8 @@ section{padding:110px 0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
 .nav.scrolled,.nav.solid{background:rgba(0,18,46,.88);backdrop-filter:blur(18px);box-shadow:0 8px 32px rgba(0,0,0,.25)}
 .brand{display:flex;align-items:center;gap:12px}
-.brand svg{height:34px;width:auto}
+.brand svg,.brand img{height:34px;width:auto}
+.brand .logo-img{height:30px}
 .brand .zh{font-weight:900;font-size:19px;color:#fff;letter-spacing:.14em;border-left:1px solid rgba(255,255,255,.25);padding-left:12px}
 .nav-links{display:flex;align-items:center;gap:30px}
 .nav-links>a,.dd>.dd-trigger{color:rgba(255,255,255,.82);font-size:15px;font-weight:500;position:relative;transition:color .25s;display:inline-flex;align-items:center;gap:5px}
@@ -263,6 +264,7 @@ section{padding:110px 0}
 footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:64px 0 36px;border-top:1px solid rgba(255,255,255,.07)}
 .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
 .foot-brand svg{height:32px;width:auto;margin-bottom:16px}
+.foot-brand .logo-img{height:34px;width:auto;margin-bottom:16px}
 .foot-brand p{font-size:13.5px;max-width:300px}
 .foot-col h6{color:#fff;font-size:14.5px;font-weight:700;margin-bottom:16px;letter-spacing:.06em}
 .foot-col a{display:block;font-size:13.5px;padding:5px 0;transition:color .25s}
