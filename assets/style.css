@@ -65,6 +65,9 @@ section{padding:110px 0}
 .nav-links>a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--orange);transition:width .3s}
 .nav-links>a:hover::after{width:100%}
 .nav-cta{padding:11px 26px;font-size:14px}
+.nav-links>a.nav-hot{color:var(--orange-2);font-weight:700}
+.nav-links>a.nav-hot:hover{color:var(--orange)}
+.nav-links>a.nav-hot::after{width:100%;background:linear-gradient(90deg,var(--orange),transparent)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;transition:.3s}
 
