@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>免費線上講座報名｜匯成交 iDealFlow.ai</title>
+<meta name="description" content="8/21、8/28 晚上 8:00 免費線上講座：把官網、內容、獲客、自動回覆、客戶培育到成交串成一條自動化流程。填寫姓名、電話、Email 並選擇場次即可完成報名。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bk2">
+
+<!-- 精簡頂列：只留回官網，避免分心 -->
+<header class="bk2-top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="匯成交 iDealFlow.ai">
+      <img class="logo-img" src="assets/logo-full.png" alt="iDealFlow.ai">
+    </a>
+    <a class="back" href="index.html">← 回官網</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- 步驟指示 -->
+  <div class="bk2-steps">
+    <span class="bk2-step on"><span class="n">1</span>填寫報名資料</span>
+    <span class="bk2-sep"></span>
+    <span class="bk2-step"><span class="n">2</span>收到上課連結</span>
+  </div>
+
+  <div class="bk2-head">
+    <h1>免費線上講座<br><em>報名只要 30 秒</em></h1>
+    <p>選一個你方便的場次，填三個欄位就完成。報名後我們會把上課連結傳給你。</p>
+  </div>
+</div>
+
+<!-- 主要區塊：左邊講座資訊、右邊表單 -->
+<main class="bk2-main">
+  <div class="wrap">
+    <div class="bk2-grid">
+
+      <div>
+        <div class="bk2-when">
+          <h3>🗓 可選場次（擇一參加）</h3>
+          <div class="bk2-slot">
+            <div class="dt"><b>8/21</b><span>FRI</span></div>
+            <div class="in"><b>晚上 8:00</b><span>線上直播・約 90 分鐘</span></div>
+          </div>
+          <div class="bk2-slot">
+            <div class="dt"><b>8/28</b><span>FRI</span></div>
+            <div class="in"><b>晚上 8:00</b><span>線上直播・約 90 分鐘</span></div>
+          </div>
+          <div class="bk2-facts">
+            <span class="bk2-fact">✓ 完全免費</span>
+            <span class="bk2-fact">✓ 線上參加</span>
+            <span class="bk2-fact">✓ 兩場內容相同</span>
+            <span class="bk2-fact">✓ 有現場示範</span>
+          </div>
+        </div>
+
+        <div class="bk2-what">
+          <h3>這場講座會講什麼？</h3>
+          <ul>
+            <li><span><b>為什麼工具越買越多，事情卻沒變少</b>——官網、客服、內容、跟進各做各的真正原因。</span></li>
+            <li><span><b>一條真的跑得通的流程</b>：官網 → 內容 → 獲客 → 自動回覆 → 客戶培育 → 老客激活 → 持續跟進 → 成交。</span></li>
+            <li><span><b>現場實際操作示範</b>，直接看系統怎麼接、怎麼設定，不是只講觀念。</span></li>
+            <li><span><b>老闆自己就能落地的做法</b>，不用工程師、不用養十套工具。</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bk2-form" id="signup" style="scroll-margin-top:80px">
+        <form class="bk-form" id="bkForm" novalidate>
+          <div class="fh">填寫報名資料</div>
+          <p class="fs">★ 為必填，四個欄位就完成。</p>
+
+          <div class="bk-field">
+            <label for="bkSession">選擇場次 <span class="req">★</span></label>
+            <select id="bkSession" name="session" required>
+              <option value="">請選擇場次……</option>
+              <option value="8/21（五）晚上 8:00">8/21（五）晚上 8:00</option>
+              <option value="8/28（五）晚上 8:00">8/28（五）晚上 8:00</option>
+            </select>
+          </div>
+
+          <div class="bk-field">
+            <label for="bkName">姓名／稱呼 <span class="req">★</span></label>
+            <input id="bkName" name="name" type="text" placeholder="王小明" required>
+          </div>
+
+          <div class="bk-field">
+            <label for="bkPhone">電話 <span class="req">★</span></label>
+            <input id="bkPhone" name="phone" type="tel" inputmode="tel" placeholder="0912-345-678" required>
+          </div>
+
+          <div class="bk-field">
+            <label for="bkEmail">Email <span class="req">★</span></label>
+            <input id="bkEmail" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+
+          <button class="btn btn-primary" type="submit">完成報名 <span class="arr">→</span></button>
+          <p class="bk-err" id="bkErr">請確認場次、姓名、電話與 Email（格式正確）都已填選。</p>
+          <p class="bk-note">送出即表示同意我們以你留下的方式通知上課資訊。<br>你的資料僅用於本次講座聯繫，不會提供給第三方。</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- 為什麼要來聽（放在表單之後，不干擾報名動作） -->
+<section style="background:#fff;padding:80px 0;border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:1000px">
+    <div class="center">
+      <div class="eyebrow" style="justify-content:center">WHY THIS TALK</div>
+      <h2 class="h2">很多中小企業老闆都發現：<br><em>工具越來越多，事情卻一點都沒變少</em></h2>
+      <p class="lead">下面七件事，只要中了兩件，這場講座就值得你來聽。</p>
+    </div>
+    <div class="bk-grid" style="margin-top:44px">
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 01</span>
+        <h4>官網做不起來，做了又接不起來</h4>
+        <p>大家都知道 SEO、GEO 很重要，以前做一個好網站貴得要死。現在 AI 可以幫你做網站了，但新的問題來了：<b>網站是做出來了，可是跟後面的 CRM、客戶資料、行銷流程全部接不起來。</b>網站最後還是只是一個網站。</p>
+      </div>
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 02</span>
+        <h4>自動化太貴，而且永遠掌握在別人手上</h4>
+        <p>想做自動化、機器人、AI 客服，找廠商一問，報價幾十萬甚至更高。最麻煩的不是貴，而是<b>錢花完了，你自己還是不會。</b>以後想改一個流程，還得繼續找廠商。</p>
+      </div>
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 03</span>
+        <h4>手上明明一堆老客戶，卻盤不活</h4>
+        <p>公司經營幾年以後，LINE、微信、Email、CRM 裡面其實都有一大堆老客戶。問題是：<b>你根本沒有時間一個一個重新聯繫。</b>這些客戶不是沒價值，而是全部睡在那裡。</p>
+      </div>
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 04</span>
+        <h4>客戶有興趣了，卻沒人繼續跟</h4>
+        <p>客戶看過你的影片、參加過活動、問過價格，甚至已經有一點想買了。結果你忙起來，三天、七天、一個月過去了，<b>沒有一個自動跟進的流程，客戶就這樣涼掉了。</b></p>
+      </div>
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 05</span>
+        <h4>知道該做什麼，就是沒時間做</h4>
+        <p>你知道要 Call 客戶、關心客戶、建立關係、培養信任、持續跟進……這些你全部都知道。問題只有一個：<b>老闆一天也只有 24 小時，你根本做不完。</b></p>
+      </div>
+      <div class="bk-card" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 06</span>
+        <h4>做內容太耗時間</h4>
+        <p>現在大家都說老闆要做 IP、要拍短影音、要經營社群。但你從想題目、寫文案、拍影片、剪輯到發出去，<b>一篇內容就吃掉你大量時間。</b></p>
+      </div>
+      <div class="bk-card wide" style="background:var(--bg-soft)">
+        <span class="bk-num">痛點 07</span>
+        <h4>好不容易有流量，卻接不住</h4>
+        <p>影片終於發出去了，也真的有人留言、有人私訊了。結果客戶晚上 11 點留言、凌晨 1 點問問題，你已經睡覺了。<b>等到第二天早上再回覆，客戶可能早就去找別人了。</b></p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:52px;padding:34px 28px;background:var(--navy-deep);border-radius:22px;color:#fff">
+      <p style="font-size:clamp(17px,2.2vw,21px);font-weight:700;line-height:1.7;max-width:720px;margin:0 auto">
+        真正缺的不是更多 AI 工具，而是把<span style="color:var(--orange)">官網 → 內容 → 獲客 → 自動回覆 → 客戶培育 → 老客激活 → 持續跟進 → 成交</span>串在一起的系統。<br>
+        讓老闆<span style="color:var(--orange)">少做一點事情</span>，公司卻能自動<span style="color:var(--orange)">多做一點生意</span>。
+      </p>
+      <a class="btn btn-primary" href="#signup" id="backToForm" style="margin-top:26px">回上面免費報名 <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="padding-top:0;justify-content:center;gap:20px;text-align:center">
+      <span>© 2026 匯鼎科技股份有限公司 iDealFlow.ai — 版權所有</span>
+      <span><a href="index.html" style="color:var(--orange)">回官網</a> · 報名問題請洽 <a href="mailto:arther.learn@gmail.com" style="color:var(--orange)">arther.learn@gmail.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 報名資料送出目的地：
+   留空 = 以使用者的郵件軟體寄到下方信箱（免後端，立即可用）
+   要改接 GoHighLevel／其他表單服務，把 POST 網址填進 FORM_ENDPOINT 即可。 */
+const FORM_ENDPOINT = '';
+const FORM_MAILTO   = 'arther.learn@gmail.com';
+
+const form  = document.getElementById('bkForm');
+const errEl = document.getElementById('bkErr');
+const btn   = form.querySelector('button[type=submit]');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form).entries());
+  const ok = d.session && d.name && d.phone && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '');
+  if (!ok) { errEl.classList.add('show'); return; }
+  errEl.classList.remove('show');
+  btn.disabled = true;
+  btn.innerHTML = '報名中……';
+
+  const thanks = 'thanks.html?s=' + encodeURIComponent(d.session) + '&n=' + encodeURIComponent(d.name);
+
+  if (FORM_ENDPOINT) {
+    try { await fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)}); }
+    catch (err) { /* 送出失敗仍導向感謝頁，避免重複送出 */ }
+    location.href = thanks;
+  } else {
+    const body = ['姓名：'+d.name, '電話：'+d.phone, 'Email：'+d.email, '報名場次：'+d.session].join('\n');
+    location.href = 'mailto:' + FORM_MAILTO
+      + '?subject=' + encodeURIComponent('【講座報名】' + d.name + '｜' + d.session)
+      + '&body=' + encodeURIComponent(body);
+    setTimeout(() => { location.href = thanks; }, 800);
+  }
+});
+
+// 「回上面免費報名」：捲回表單並聚焦第一個欄位
+document.getElementById('backToForm').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('signup').scrollIntoView({behavior:'smooth', block:'start'});
+  setTimeout(() => document.getElementById('bkSession').focus({preventScroll:true}), 500);
+});
+</script>
+</body>
+</html>

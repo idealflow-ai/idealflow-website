@@ -554,3 +554,159 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:64px 0 36p
   .guarantee{flex-direction:column;text-align:center}
   .fp-sticky .st-txt small{display:none}
 }
+
+/* ============================================================
+   預約諮詢頁 booking.html
+   ============================================================ */
+.bk-hero .hero-inner{max-width:900px}
+.bk-hero h1{font-size:clamp(32px,5.4vw,60px)}
+.bk-line{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px;font-size:14.5px;color:rgba(255,255,255,.7)}
+.bk-line b{color:#7BE3AE}
+
+/* 痛點清單 */
+.bk-pains{background:var(--bg-soft)}
+.bk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
+.bk-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px 30px;transition:all .35s}
+.bk-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.bk-card .bk-num{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-en);font-size:12.5px;font-weight:800;letter-spacing:.14em;color:var(--orange);background:var(--orange-soft);border-radius:999px;padding:5px 14px;margin-bottom:14px}
+.bk-card h4{font-size:19px;font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:12px}
+.bk-card h4::before{content:"✗ ";color:#E5484D}
+.bk-card p{font-size:14.5px;color:var(--slate)}
+.bk-card p b{color:var(--navy);font-weight:700}
+.bk-card.wide{grid-column:1 / -1}
+
+/* 轉折段＋串接鏈 */
+.bk-turn{background:var(--navy-deep);color:#fff;text-align:center;position:relative;overflow:hidden}
+.bk-turn::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px}
+.bk-turn .wrap{position:relative}
+.bk-turn h2{font-size:clamp(26px,4.2vw,42px);font-weight:900;line-height:1.35;color:#fff}
+.bk-turn h2 em{font-style:normal;color:var(--orange)}
+.bk-turn .bk-lead{color:rgba(255,255,255,.72);font-size:17px;max-width:620px;margin:20px auto 0}
+.bk-chain{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:46px auto 0;max-width:900px}
+.bk-step{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:700;color:#fff}
+.bk-step.last{background:linear-gradient(135deg,var(--orange),#FF9A3D);border-color:transparent;box-shadow:0 12px 30px -10px rgba(255,121,0,.6)}
+.bk-arrow{color:rgba(255,255,255,.35);font-size:15px}
+.bk-punch{margin-top:44px;font-size:clamp(17px,2.3vw,22px);font-weight:700;line-height:1.7;color:#fff;max-width:760px;margin-left:auto;margin-right:auto}
+.bk-punch span{color:var(--orange)}
+
+/* 預約表單 */
+.bk-book{background:var(--bg-soft)}
+.bk-book-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;margin-top:52px;align-items:start}
+.bk-side h3{font-size:22px;font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:20px}
+.bk-side h3 em{font-style:normal;color:var(--orange)}
+.bk-list{display:flex;flex-direction:column;gap:14px}
+.bk-item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.bk-item .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--orange-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.bk-item b{display:block;font-size:15px;color:var(--navy);margin-bottom:2px}
+.bk-item span{font-size:13.5px;color:var(--slate)}
+.bk-meta{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:14px;padding:18px 20px}
+.bk-meta b{display:block;font-size:14.5px;color:var(--navy);margin-bottom:6px}
+.bk-meta p{font-size:13.5px;color:var(--slate)}
+
+.bk-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 34px;box-shadow:var(--shadow-md)}
+.bk-form .fh{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:6px}
+.bk-form .fs{font-size:14px;color:var(--slate);margin-bottom:26px}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bk-field{margin-bottom:16px}
+.bk-field label{display:block;font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.bk-field label .req{color:#E5484D}
+.bk-field input,.bk-field select,.bk-field textarea{width:100%;font-family:var(--font-tc);font-size:15px;color:var(--ink);background:var(--bg-soft);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;transition:all .25s;outline:none}
+.bk-field textarea{resize:vertical;min-height:96px;line-height:1.7}
+.bk-field select{appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234A5A75' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+.bk-field input:focus,.bk-field select:focus,.bk-field textarea:focus{border-color:var(--orange);background:#fff;box-shadow:0 0 0 4px rgba(255,121,0,.12)}
+.bk-field input::placeholder,.bk-field textarea::placeholder{color:#9AA7BC}
+.bk-form .btn{width:100%;margin-top:8px}
+.bk-note{font-size:12.5px;color:var(--slate);text-align:center;margin-top:14px;line-height:1.7}
+.bk-err{display:none;font-size:13px;color:#E5484D;font-weight:700;margin-top:12px;text-align:center}
+.bk-err.show{display:block}
+.bk-done{display:none;text-align:center;padding:22px 0}
+.bk-done.show{display:block}
+.bk-done .tick{width:64px;height:64px;border-radius:50%;background:rgba(30,180,120,.12);color:#17A673;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 18px}
+.bk-done h4{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:10px}
+.bk-done p{font-size:14.5px;color:var(--slate);max-width:380px;margin:0 auto 20px}
+
+@media(max-width:900px){
+  .bk-grid{grid-template-columns:1fr}
+  .bk-book-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .bk-row{grid-template-columns:1fr}
+  .bk-form{padding:28px 22px}
+  .bk-chain{gap:8px}
+  .bk-step{font-size:13px;padding:9px 15px}
+}
+
+/* ============================================================
+   報名頁 v2（淺底・單一目的・與官網明顯區隔）
+   ============================================================ */
+.bk2{background:var(--bg-soft);min-height:100vh}
+.bk2-top{background:var(--navy-deep);position:sticky;top:0;z-index:100}
+.bk2-top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.bk2-top .brand .logo-img{height:26px}
+.bk2-top .back{font-size:14px;color:rgba(255,255,255,.72)}
+.bk2-top .back:hover{color:var(--orange)}
+
+.bk2-steps{display:flex;align-items:center;justify-content:center;gap:12px;padding:30px 0 0;flex-wrap:wrap}
+.bk2-step{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700;color:#9AA7BC}
+.bk2-step .n{width:26px;height:26px;border-radius:50%;background:#E4E9F2;color:#9AA7BC;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:var(--font-en)}
+.bk2-step.on{color:var(--navy)}
+.bk2-step.on .n{background:var(--orange);color:#fff;box-shadow:0 6px 16px -4px rgba(255,121,0,.6)}
+.bk2-sep{width:34px;height:2px;background:#E4E9F2;border-radius:2px}
+
+.bk2-head{text-align:center;padding:26px 0 0}
+.bk2-head h1{font-size:clamp(28px,4.4vw,44px);font-weight:900;color:var(--navy);line-height:1.3}
+.bk2-head h1 em{font-style:normal;color:var(--orange)}
+.bk2-head p{font-size:16px;color:var(--slate);max-width:560px;margin:14px auto 0}
+
+.bk2-main{padding:40px 0 90px}
+.bk2-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:start;max-width:1000px;margin:0 auto}
+
+.bk2-when{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px;box-shadow:var(--shadow-md)}
+.bk2-when h3{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:18px}
+.bk2-slot{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.bk2-slot:last-of-type{border-bottom:none}
+.bk2-slot .dt{width:52px;height:52px;flex-shrink:0;border-radius:14px;background:var(--orange-soft);color:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:800;line-height:1.1}
+.bk2-slot .dt b{font-size:18px}
+.bk2-slot .dt span{font-size:10.5px;letter-spacing:.08em}
+.bk2-slot .in b{display:block;font-size:15.5px;color:var(--navy)}
+.bk2-slot .in span{font-size:13.5px;color:var(--slate)}
+.bk2-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.bk2-fact{font-size:12.5px;font-weight:700;color:var(--navy);background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+
+.bk2-what{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 30px}
+.bk2-what h3{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:14px}
+.bk2-what li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--slate);padding:7px 0}
+.bk2-what li::before{content:"✓";flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(30,180,120,.12);color:#17A673;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:3px}
+.bk2-what li b{color:var(--navy)}
+
+.bk2-form{position:sticky;top:92px}
+@media(max-width:900px){
+  .bk2-grid{grid-template-columns:1fr}
+  .bk2-form{position:static;order:-1}   /* 手機：表單排最前，先能報名再看說明 */
+  .bk2-main{padding:26px 0 60px}
+  .bk2-when,.bk2-what{padding:22px 22px}
+  .bk2-head h1{font-size:26px}
+  .bk2-head p{font-size:14.5px}
+  .bk2-steps{padding-top:22px}
+  .bk2-step{font-size:13px}
+}
+
+/* 感謝頁 */
+.ty{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(1000px 600px at 50% -10%,#0A3D8F 0%,var(--navy-2) 45%,var(--navy-deep) 100%);color:#fff;padding:90px 0;position:relative;overflow:hidden}
+.ty::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px}
+.ty .wrap{position:relative;max-width:620px;text-align:center}
+.ty .tick{width:82px;height:82px;border-radius:50%;background:rgba(30,180,120,.16);border:1.5px solid rgba(123,227,174,.5);color:#7BE3AE;display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 26px}
+.ty h1{font-size:clamp(28px,4.4vw,44px);font-weight:900;line-height:1.3}
+.ty h1 span{color:var(--orange)}
+.ty .ty-sub{color:rgba(255,255,255,.75);font-size:16.5px;margin-top:16px}
+.ty-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:24px 26px;margin:32px 0;text-align:left;backdrop-filter:blur(8px)}
+.ty-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;font-size:15px}
+.ty-row+.ty-row{border-top:1px dashed rgba(255,255,255,.15)}
+.ty-row .k{color:rgba(255,255,255,.6)}
+.ty-row .v{font-weight:700;color:#fff;text-align:right}
+.ty-next{text-align:left;margin-top:6px}
+.ty-next h4{font-size:16px;font-weight:900;margin-bottom:12px}
+.ty-next li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:rgba(255,255,255,.78);padding:6px 0}
+.ty-next li .no{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(255,121,0,.18);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-family:var(--font-en)}
+.ty .hero-ctas{margin-top:34px}
+.ty-foot{margin-top:30px;font-size:13px;color:rgba(255,255,255,.45)}
