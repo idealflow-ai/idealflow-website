@@ -80,8 +80,8 @@
             <label for="bkSession">選擇場次 <span class="req">★</span></label>
             <select id="bkSession" name="session" required>
               <option value="">請選擇場次……</option>
-              <option value="8/21（五）晚上 8:00">8/21（五）晚上 8:00</option>
-              <option value="8/28（五）晚上 8:00">8/28（五）晚上 8:00</option>
+              <option value="8/21（五）晚上 8:00" data-ghl="08-21-2026 08:00 PM">8/21（五）晚上 8:00</option>
+              <option value="8/28（五）晚上 8:00" data-ghl="08-28-2026 08:00 PM">8/28（五）晚上 8:00</option>
             </select>
           </div>
 
@@ -179,12 +179,23 @@
 /* 報名資料送出目的地：
    留空 = 以使用者的郵件軟體寄到下方信箱（免後端，立即可用）
    要改接 GoHighLevel／其他表單服務，把 POST 網址填進 FORM_ENDPOINT 即可。 */
-const FORM_ENDPOINT = '';
-const FORM_MAILTO   = 'arther.learn@gmail.com';
+/* 報名資料送進 GoHighLevel：Workflow → Inbound Webhook Trigger
+   欄位為扁平結構（GHL 對應巢狀 JSON 不穩），送出後導向感謝頁。 */
+const FORM_ENDPOINT = 'https://services.leadconnectorhq.com/hooks/rROh0DkvDTbUH3GYRGcQ/webhook-trigger/a2f1bd7a-de01-4431-852b-641e3a56546c';
+const FORM_MAILTO   = 'arther.learn@gmail.com';   // webhook 送不出去時的備援
 
 const form  = document.getElementById('bkForm');
 const errEl = document.getElementById('bkErr');
 const btn   = form.querySelector('button[type=submit]');
+
+// 台灣手機號轉 E.164（0912345678 → +886912345678），GHL 才認得
+function toE164(raw) {
+  const n = (raw || '').replace(/[^\d+]/g, '');
+  if (n.startsWith('+')) return n;
+  if (n.startsWith('886')) return '+' + n;
+  if (n.startsWith('0'))  return '+886' + n.slice(1);
+  return n ? '+886' + n : '';
+}
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -195,16 +206,37 @@ form.addEventListener('submit', async (e) => {
   btn.disabled = true;
   btn.innerHTML = '報名中……';
 
-  const thanks = 'thanks.html?s=' + encodeURIComponent(d.session) + '&n=' + encodeURIComponent(d.name);
+  const name = d.name.trim();
+  const opt  = document.getElementById('bkSession').selectedOptions[0];
 
-  if (FORM_ENDPOINT) {
-    try { await fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)}); }
-    catch (err) { /* 送出失敗仍導向感謝頁，避免重複送出 */ }
+  const payload = {
+    full_name:    name,
+    first_name:   name,                 // GHL 聯絡人必填的名字欄位
+    email:        d.email.trim(),
+    phone:        toE164(d.phone),
+    phone_raw:    d.phone.trim(),       // 原始輸入，方便人工核對
+    session:       opt ? opt.dataset.ghl : '',   // GHL 日期格式：08-21-2026 08:00 PM
+    session_label: d.session,                     // 給人看的：8/21（五）晚上 8:00
+    source:       '官網講座報名頁',
+    page_url:     location.href,
+    submitted_at: new Date().toISOString()
+  };
+
+  const thanks = 'thanks.html?s=' + encodeURIComponent(d.session) + '&n=' + encodeURIComponent(name);
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     location.href = thanks;
-  } else {
-    const body = ['姓名：'+d.name, '電話：'+d.phone, 'Email：'+d.email, '報名場次：'+d.session].join('\n');
+  } catch (err) {
+    // webhook 掛掉時不讓報名者的資料消失：改用郵件備援，再導向感謝頁
+    const body = ['姓名：'+name, '電話：'+d.phone, 'Email：'+d.email, '報名場次：'+d.session].join('\n');
     location.href = 'mailto:' + FORM_MAILTO
-      + '?subject=' + encodeURIComponent('【講座報名】' + d.name + '｜' + d.session)
+      + '?subject=' + encodeURIComponent('【講座報名】' + name + '｜' + d.session)
       + '&body=' + encodeURIComponent(body);
     setTimeout(() => { location.href = thanks; }, 800);
   }
