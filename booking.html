@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>免費線上講座報名｜匯成交 iDealFlow.ai</title>
-<meta name="description" content="8/21、8/28 晚上 8:00 免費線上講座：把官網、內容、獲客、自動回覆、客戶培育到成交串成一條自動化流程。填寫姓名、電話、Email 並選擇場次即可完成報名。">
+<title>免費實體講座報名｜匯成交 iDealFlow.ai</title>
+<meta name="description" content="10/3（六）14:00－19:00 免費實體講座，地點：台北市南京東路四段51-2號3樓。把官網、內容、獲客、自動回覆、客戶培育到成交串成一條自動化流程。填寫姓名、電話、Email 即可完成報名。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -27,12 +27,12 @@
   <div class="bk2-steps">
     <span class="bk2-step on"><span class="n">1</span>填寫報名資料</span>
     <span class="bk2-sep"></span>
-    <span class="bk2-step"><span class="n">2</span>收到上課連結</span>
+    <span class="bk2-step"><span class="n">2</span>收到地點提醒</span>
   </div>
 
   <div class="bk2-head">
-    <h1>自動化成交<br>免費線上講座<br><em>報名只要 30 秒</em></h1>
-    <p>選一個你方便的場次，填三個欄位就完成。報名後我們會把上課連結傳給你。</p>
+    <h1>自動化成交<br>免費實體講座<br><em>報名只要 30 秒</em></h1>
+    <p>填三個欄位就完成，我們會把地點與交通資訊傳給你。</p>
   </div>
 </div>
 
@@ -43,20 +43,16 @@
 
       <div>
         <div class="bk2-when">
-          <h3>🗓 可選場次（擇一參加）</h3>
+          <h3>🗓 講座時間與地點</h3>
           <div class="bk2-slot">
-            <div class="dt"><b>8/21</b><span>FRI</span></div>
-            <div class="in"><b>晚上 8:00</b><span>線上直播・約 90 分鐘</span></div>
-          </div>
-          <div class="bk2-slot">
-            <div class="dt"><b>8/28</b><span>FRI</span></div>
-            <div class="in"><b>晚上 8:00</b><span>線上直播・約 90 分鐘</span></div>
+            <div class="dt"><b>10/3</b><span>SAT</span></div>
+            <div class="in"><b>14:00－19:00</b><span>實體講座・台北市南京東路四段51-2號3樓</span></div>
           </div>
           <div class="bk2-facts">
             <span class="bk2-fact">✓ 完全免費</span>
-            <span class="bk2-fact">✓ 線上參加</span>
-            <span class="bk2-fact">✓ 兩場內容相同</span>
+            <span class="bk2-fact">✓ 現場參加</span>
             <span class="bk2-fact">✓ 有現場示範</span>
+            <span class="bk2-fact">✓ 可當面提問</span>
           </div>
         </div>
 
@@ -74,16 +70,7 @@
       <div class="bk2-form" id="signup" style="scroll-margin-top:80px">
         <form class="bk-form" id="bkForm" novalidate>
           <div class="fh">填寫報名資料</div>
-          <p class="fs">★ 為必填，四個欄位就完成。</p>
-
-          <div class="bk-field">
-            <label for="bkSession">選擇場次 <span class="req">★</span></label>
-            <select id="bkSession" name="session" required>
-              <option value="">請選擇場次……</option>
-              <option value="8/21（五）晚上 8:00" data-ghl="08-21-2026 08:00 PM">8/21（五）晚上 8:00</option>
-              <option value="8/28（五）晚上 8:00" data-ghl="08-28-2026 08:00 PM">8/28（五）晚上 8:00</option>
-            </select>
-          </div>
+          <p class="fs">★ 為必填，三個欄位就完成。</p>
 
           <div class="bk-field">
             <label for="bkName">姓名／稱呼 <span class="req">★</span></label>
@@ -101,8 +88,8 @@
           </div>
 
           <button class="btn btn-primary" type="submit">完成報名 <span class="arr">→</span></button>
-          <p class="bk-err" id="bkErr">請確認場次、姓名、電話與 Email（格式正確）都已填選。</p>
-          <p class="bk-note">送出即表示同意我們以你留下的方式通知上課資訊。<br>你的資料僅用於本次講座聯繫，不會提供給第三方。</p>
+          <p class="bk-err" id="bkErr">請確認姓名、電話與 Email（格式正確）都已填寫。</p>
+          <p class="bk-note">送出即表示同意我們以你留下的方式通知講座地點與提醒。<br>你的資料僅用於本次講座聯繫，不會提供給第三方。</p>
         </form>
       </div>
 
@@ -184,6 +171,11 @@
 const FORM_ENDPOINT = 'https://services.leadconnectorhq.com/hooks/zY8JbOOVat7EkBLQyIkB/webhook-trigger/12sfMqNpJsSCz2uJTzZ3';
 const FORM_MAILTO   = 'arther.learn@gmail.com';   // webhook 送不出去時的備援
 
+// 目前只有單一場次，直接寫死（不用再讓使用者選）
+const SESSION_LABEL = '10/3（六）14:00－19:00';        // 顯示用
+const SESSION_GHL   = '10-03-2026 02:00 PM';           // GHL 日期格式：MM-DD-YYYY hh:mm AM/PM
+const VENUE         = '台北市南京東路四段51-2號3樓';
+
 const form  = document.getElementById('bkForm');
 const errEl = document.getElementById('bkErr');
 const btn   = form.querySelector('button[type=submit]');
@@ -200,14 +192,13 @@ function toE164(raw) {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(form).entries());
-  const ok = d.session && d.name && d.phone && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '');
+  const ok = d.name && d.phone && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '');
   if (!ok) { errEl.classList.add('show'); return; }
   errEl.classList.remove('show');
   btn.disabled = true;
   btn.innerHTML = '報名中……';
 
   const name = d.name.trim();
-  const opt  = document.getElementById('bkSession').selectedOptions[0];
 
   const payload = {
     full_name:    name,
@@ -215,14 +206,15 @@ form.addEventListener('submit', async (e) => {
     email:        d.email.trim(),
     phone:        toE164(d.phone),
     phone_raw:    d.phone.trim(),       // 原始輸入，方便人工核對
-    session:       opt ? opt.dataset.ghl : '',   // GHL 日期格式：08-21-2026 08:00 PM
-    session_label: d.session,                     // 給人看的：8/21（五）晚上 8:00
+    session:       SESSION_GHL,          // GHL 日期格式：10-03-2026 02:00 PM
+    session_label: SESSION_LABEL,        // 給人看的：10/3（六）14:00－19:00
+    venue:        VENUE,
     source:       '官網講座報名頁',
     page_url:     location.href,
     submitted_at: new Date().toISOString()
   };
 
-  const thanks = 'thanks.html?s=' + encodeURIComponent(d.session) + '&n=' + encodeURIComponent(name);
+  const thanks = 'thanks.html?s=' + encodeURIComponent(SESSION_LABEL) + '&n=' + encodeURIComponent(name);
 
   try {
     const res = await fetch(FORM_ENDPOINT, {
@@ -234,9 +226,9 @@ form.addEventListener('submit', async (e) => {
     location.href = thanks;
   } catch (err) {
     // webhook 掛掉時不讓報名者的資料消失：改用郵件備援，再導向感謝頁
-    const body = ['姓名：'+name, '電話：'+d.phone, 'Email：'+d.email, '報名場次：'+d.session].join('\n');
+    const body = ['姓名：'+name, '電話：'+d.phone, 'Email：'+d.email, '報名場次：'+SESSION_LABEL, '地點：'+VENUE].join('\n');
     location.href = 'mailto:' + FORM_MAILTO
-      + '?subject=' + encodeURIComponent('【講座報名】' + name + '｜' + d.session)
+      + '?subject=' + encodeURIComponent('【講座報名】' + name + '｜' + SESSION_LABEL)
       + '&body=' + encodeURIComponent(body);
     setTimeout(() => { location.href = thanks; }, 800);
   }
@@ -246,7 +238,7 @@ form.addEventListener('submit', async (e) => {
 document.getElementById('backToForm').addEventListener('click', (e) => {
   e.preventDefault();
   document.getElementById('signup').scrollIntoView({behavior:'smooth', block:'start'});
-  setTimeout(() => document.getElementById('bkSession').focus({preventScroll:true}), 500);
+  setTimeout(() => document.getElementById('bkName').focus({preventScroll:true}), 500);
 });
 </script>
 </body>
